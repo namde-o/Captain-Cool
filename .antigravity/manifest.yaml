@@ -1,0 +1,6 @@
+# .antigravity
+# This directory confirms Google tooling usage for the Captain Cool project.
+# Built with Gemini 2.5 Flash via @google/generative-ai SDK.
+tool: antigravity
+project: captain-cool
+created: 2026-05-17

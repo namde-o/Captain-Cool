@@ -1,0 +1,219 @@
+/* splash.css */
+.splash-root {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+  background: #000;
+}
+
+/* BACKGROUND */
+.splash-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #1a0a2e 0%, #0a1a0a 50%, #0a0a1a 100%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.beat-2 .splash-bg,
+.beat-3 .splash-bg,
+.beat-4 .splash-bg,
+.beat-5 .splash-bg { opacity: 1; }
+.beat-6 .splash-bg { opacity: 0; }
+
+/* BALL DROP */
+.splash-ball {
+  font-size: 4rem;
+  position: relative;
+  z-index: 2;
+  transform: translateY(-300px) scale(0.5);
+  opacity: 0;
+  transition: none;
+}
+.beat-1 .splash-ball {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  animation: ballDrop 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
+             ballBounce 0.3s 0.6s ease-out forwards;
+}
+.beat-6 .splash-ball { opacity: 0; transition: opacity 0.4s; }
+
+@keyframes ballDrop {
+  from { transform: translateY(-300px) scale(0.5); opacity: 0; }
+  to   { transform: translateY(0) scale(1.15); opacity: 1; }
+}
+@keyframes ballBounce {
+  from { transform: scale(1.15); }
+  to   { transform: scale(1); }
+}
+
+/* SHOCKWAVE */
+.splash-shockwave {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 215, 0, 0.6);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.beat-2 .splash-shockwave {
+  animation: shockwave 0.7s ease-out forwards;
+}
+@keyframes shockwave {
+  from { width: 10px; height: 10px; opacity: 1; translate: -50% -50%; }
+  to   { width: 400px; height: 400px; opacity: 0; translate: -50% -50%; }
+}
+
+/* TITLE */
+.splash-title-row {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+  position: relative;
+  z-index: 2;
+}
+.splash-word {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: #FFD700;
+  opacity: 0;
+  letter-spacing: 4px;
+  text-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+}
+.splash-captain {
+  transform: translateX(-80px);
+  transition: none;
+}
+.splash-cool {
+  transform: translateX(80px);
+  transition: none;
+}
+.beat-3 .splash-captain {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.beat-3 .splash-cool {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
+}
+.beat-6 .splash-word { opacity: 0; transition: opacity 0.4s; }
+
+/* SUBTITLE */
+.splash-subtitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 12px;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+.beat-4 .splash-subtitle,
+.beat-5 .splash-subtitle { opacity: 1; }
+.beat-6 .splash-subtitle { opacity: 0; }
+
+/* ANIMATED LINE */
+.splash-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
+  width: 0;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+  transition: width 0.5s ease 0.2s;
+}
+.beat-4 .splash-line,
+.beat-5 .splash-line { width: 280px; }
+.beat-6 .splash-line { width: 0; transition: width 0.3s ease; }
+
+/* BADGE */
+.splash-badge {
+  margin-top: 24px;
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  font-size: 0.85rem;
+  background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: 1px solid rgba(255,255,255,0.15);
+  opacity: 0;
+  transform: translateY(10px);
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.beat-5 .splash-badge { opacity: 1; transform: translateY(0); }
+.beat-6 .splash-badge { opacity: 0; }
+
+/* DOTS */
+.splash-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  position: relative;
+  z-index: 2;
+}
+.splash-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  display: inline-block;
+}
+.dot-mi { background: #004BA0; }
+.dot-csk { background: #FFC72C; }
+.dot-rcb { background: #D4001E; }
+
+.beat-5 .dot-mi {
+  opacity: 1; transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1) 0s;
+}
+.beat-5 .dot-csk {
+  opacity: 1; transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1) 0.1s;
+}
+.beat-5 .dot-rcb {
+  opacity: 1; transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1) 0.2s;
+}
+.beat-6 .splash-dot { opacity: 0; transition: opacity 0.3s; }
+
+/* SKIP BUTTON */
+.splash-skip {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+  font-family: 'Rajdhani', sans-serif;
+}
+.splash-skip:hover { color: rgba(255,255,255,0.7); }
+
+/* FULL FADEOUT on beat-6 */
+.beat-6 {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
