@@ -57,7 +57,7 @@ https://aistudio.google.com/apikey using **⚙️ API Key**.
 
 - **Decision quality:** Check Harsha's `confidenceScore` (0-100). Suggested read:
   - **≥75**: strong call → proceed unless match context changed sharply
-  - **50-74**: moderate confidence → sanity-check with Bumrah's alternative before committing
+  - **50-74 (inclusive)**: moderate confidence → sanity-check with Bumrah's alternative before committing
   - **<50**: high uncertainty → consider a safer fallback strategy or collect more context
 - **Risk check:** Compare Rohit's plan with Bumrah's critique.
 - **Execution detail:** Validate field placements, lengths, and over timing in rationale.
