@@ -16,7 +16,7 @@ New here? Run one quick match simulation:
 1. Launch the app with `npm run dev`.
 2. Open the app in your browser.
 3. Click **⚙️ API Key** and paste your Gemini key.
-4. Fill a live-like match state (over, score, batters, bowlers, pitch, dew).
+4. Fill a live-like match state (over, score, batters/batsmen, bowlers, pitch, dew).
 5. Hit **Start Debate** and watch:
    - **Sanjay** analyze data
    - **Rohit** propose a call
@@ -56,9 +56,9 @@ https://aistudio.google.com/apikey using **⚙️ API Key**.
 ### Guide 3 — Interpret the Output Quickly
 
 - **Decision quality:** Check Harsha's `confidenceScore` (0-100). Suggested read:
-  - **75+**: strong call
-  - **50-74**: moderate confidence
-  - **below 50**: high uncertainty  
+  - **75+**: strong call → proceed unless match context changed sharply
+  - **50-74**: moderate confidence → sanity-check with Bumrah's alternative before committing
+  - **below 50**: high uncertainty → consider a safer fallback strategy or collect more context  
     _(Context can still shift interpretation.)_
 - **Risk check:** Compare Rohit's plan with Bumrah's critique.
 - **Execution detail:** Validate field placements, lengths, and over timing in rationale.
