@@ -47,7 +47,7 @@ https://aistudio.google.com/apikey using **⚙️ API Key**.
 
 ### Guide 2 — Run a Match Debate
 
-1. Enter match context (teams, innings, over/ball, score, striker and non-striker batter roles).
+1. Enter match context (teams, innings, over/ball, score, striker and non-striker batters).
 2. Add chase pressure inputs (target, pitch type, dew factor, venue).
 3. Add remaining bowlers and overs left.
 4. Trigger the agent flow and review each card in order.
@@ -56,9 +56,9 @@ https://aistudio.google.com/apikey using **⚙️ API Key**.
 ### Guide 3 — Interpret the Output Quickly
 
 - **Decision quality:** Check Harsha's `confidenceScore` (0-100). Suggested read:
-  - **75+**: strong call → proceed unless match context changed sharply
+  - **75-100**: strong call → proceed unless match context changed sharply
   - **50-74**: moderate confidence → sanity-check with Bumrah's alternative before committing
-  - **below 50**: high uncertainty → consider a safer fallback strategy or collect more context  
+  - **0-49**: high uncertainty → consider a safer fallback strategy or collect more context  
     _(Context can still shift interpretation.)_
 - **Risk check:** Compare Rohit's plan with Bumrah's critique.
 - **Execution detail:** Validate field placements, lengths, and over timing in rationale.
