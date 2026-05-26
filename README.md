@@ -55,7 +55,11 @@ https://aistudio.google.com/apikey using **⚙️ API Key**.
 
 ### Guide 3 — Interpret the Output Quickly
 
-- **Decision quality:** Check Harsha's `confidenceScore` (0-100). Suggested read: 75+ = strong call, 50-74 = moderate confidence, below 50 = high uncertainty (context can still shift interpretation).
+- **Decision quality:** Check Harsha's `confidenceScore` (0-100). Suggested read:
+  - **75+**: strong call
+  - **50-74**: moderate confidence
+  - **below 50**: high uncertainty  
+    _(Context can still shift interpretation.)_
 - **Risk check:** Compare Rohit's plan with Bumrah's critique.
 - **Execution detail:** Validate field placements, lengths, and over timing in rationale.
 
